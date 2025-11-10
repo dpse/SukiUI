@@ -33,7 +33,7 @@
     <PackageVersion Include="SkiaSharp.NativeAssets.WebAssembly" Version="3.119.1" />
     <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="9.0.6" />
-    <PackageVersion Include="System.Linq.Dynamic.Core" Version="1.6.8" />
+    <PackageVersion Include="System.Linq.Dynamic.Core" Version="1.6.9" />
     <PackageVersion Include="System.Text.Json" Version="10.0.0-rc.1.25451.107" />
   </ItemGroup>
 </Project>
