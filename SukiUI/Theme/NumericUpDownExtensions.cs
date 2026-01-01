@@ -57,16 +57,16 @@ public class NumericUpDownExtensions
         control.SetValue(UnitProperty, value);
     }
 
-    public static readonly AttachedProperty<bool> UseFloatingPlaceholderProperty =
-        AvaloniaProperty.RegisterAttached<NumericUpDown, bool>("UseFloatingPlaceholder", typeof(NumericUpDown));
+    public static readonly AttachedProperty<bool> UseFloatingWatermarkProperty =
+        AvaloniaProperty.RegisterAttached<NumericUpDown, bool>("UseFloatingWatermark", typeof(NumericUpDown));
 
-    public static bool GetUseFloatingPlaceholder(NumericUpDown control)
+    public static bool GetUseFloatingWatermark(NumericUpDown control)
     {
-        return control.GetValue(UseFloatingPlaceholderProperty);
+        return control.GetValue(UseFloatingWatermarkProperty);
     }
 
-    public static void SetUseFloatingPlaceholder(NumericUpDown control, bool value)
+    public static void SetUseFloatingWatermark(NumericUpDown control, bool value)
     {
-        control.SetValue(UseFloatingPlaceholderProperty, value);
+        control.SetValue(UseFloatingWatermarkProperty, value);
     }
 }

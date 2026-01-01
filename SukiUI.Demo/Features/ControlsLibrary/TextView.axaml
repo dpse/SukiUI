@@ -225,7 +225,7 @@
                         </showMeTheXaml:XamlDisplay>
 
                         <showMeTheXaml:XamlDisplay UniqueId="TextBox2">
-                            <TextBox Text="" suki:TextBoxExtensions.ResetText="" PlaceholderText="PlaceholderText" />
+                            <TextBox Text="" suki:TextBoxExtensions.ResetText="" Watermark="Watermark" />
                         </showMeTheXaml:XamlDisplay>
 
                         <showMeTheXaml:XamlDisplay UniqueId="TextBox3">
@@ -249,8 +249,8 @@
                                 <StackPanel Spacing="8">
                                     <TextBox Text="Programming"
                                              suki:TextBoxExtensions.ResetText="Programming"
-                                             UseFloatingPlaceholder="True"
-                                             PlaceholderText="Hobbies" />
+                                             UseFloatingWatermark="True"
+                                             Watermark="Hobbies" />
                                 </StackPanel>
                             </suki:GlassCard>
                         </showMeTheXaml:XamlDisplay>

@@ -20,13 +20,13 @@
 
                     <TextBox IsEnabled="False"
                              Text="Disabled text"
-                             PlaceholderText="TextBox" />
+                             Watermark="TextBox" />
 
                     <TextBox suki:TextBoxExtensions.AddDeleteButton="True"
                              BorderBrush="Red"
                              BorderThickness="10"
                              Text="Thick border"
-                             UseFloatingPlaceholder="True" />
+                             UseFloatingWatermark="True" />
 
                     <TextBox suki:TextBoxExtensions.AddDeleteButton="True" Text="Error validation">
                         <DataValidationErrors.Error>
@@ -43,14 +43,14 @@
                              suki:TextBoxExtensions.ResetText="google"
                              suki:TextBoxExtensions.AddDeleteButton="True"
                              Text="test"
-                             UseFloatingPlaceholder="True"
-                             PlaceholderText="Url" />
+                             UseFloatingWatermark="True"
+                             Watermark="Url" />
 
                     <TextBox InnerLeftContent="[L]"
                              InnerRightContent="[R]"
                              Text="InnerContent" />
 
-                    <TextBox Classes="NoShadow" PlaceholderText="NoShadow" />
+                    <TextBox Classes="NoShadow" Watermark="NoShadow" />
 
                     <NumericUpDown Value="1">
                         <DataValidationErrors.Error>
@@ -174,7 +174,7 @@
 
     <system:Double x:Key="SukiTextBoxElementSpacing">5</system:Double>
     <suki:StringToDoubleConverter x:Key="StringToDoubleC" />
-    <converters:MarginMultiplierConverter x:Key="FloatingPlaceholderPaddingMultiplier"
+    <converters:MarginMultiplierConverter x:Key="FloatingWatermarkPaddingMultiplier"
                                           Bottom="True"
                                           Indent="1"
                                           Left="False"
@@ -255,14 +255,14 @@
                                LastChildFill="True"
                                VerticalSpacing="3">
 
-                        <TextBlock Name="PART_FloatingPlaceholder"
+                        <TextBlock Name="PART_FloatingWatermark"
                                    DockPanel.Dock="Top"
                                    Foreground="{DynamicResource SukiPrimaryColor120}"
-                                   Text="{TemplateBinding PlaceholderText}">
+                                   Text="{TemplateBinding Watermark}">
                             <TextBox.IsVisible>
                                 <MultiBinding Converter="{x:Static BoolConverters.And}">
-                                    <TemplateBinding Converter="{x:Static StringConverters.IsNotNullOrEmpty}" Property="PlaceholderText" />
-                                    <TemplateBinding Property="UseFloatingPlaceholder" />
+                                    <TemplateBinding Converter="{x:Static StringConverters.IsNotNullOrEmpty}" Property="Watermark" />
+                                    <TemplateBinding Property="UseFloatingWatermark" />
                                 </MultiBinding>
                             </TextBox.IsVisible>
                         </TextBlock>
@@ -301,11 +301,11 @@
                                     </Style>
                                 </ScrollViewer.Styles>
                                 <Panel>
-                                    <TextBlock Name="PART_Placeholder"
+                                    <TextBlock Name="PART_Watermark"
                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                                Opacity="0.5"
-                                               Text="{TemplateBinding PlaceholderText}"
+                                               Text="{TemplateBinding Watermark}"
                                                TextAlignment="{TemplateBinding TextAlignment}"
                                                TextWrapping="{TemplateBinding TextWrapping}">
                                         <TextBlock.IsVisible>
@@ -314,7 +314,7 @@
                                                          ElementName="PART_TextPresenter"
                                                          Path="PreeditText" />
                                                 <TemplateBinding Converter="{x:Static StringConverters.IsNullOrEmpty}" Property="Text" />
-                                                <TemplateBinding Converter="{x:Static BoolConverters.Not}" Property="UseFloatingPlaceholder" />
+                                                <TemplateBinding Converter="{x:Static BoolConverters.Not}" Property="UseFloatingWatermark" />
                                             </MultiBinding>
                                         </TextBlock.IsVisible>
                                     </TextBlock>
@@ -365,8 +365,8 @@
                                             <TemplateBinding Property="suki:TextBoxExtensions.ResetText" />
                                         </MultiBinding>
                                     </ToolTip.Tip>
-                                    <PathIcon Width="16"
-                                              Height="16"
+                                    <PathIcon Width="18"
+                                              Height="18"
                                               Margin="0"
                                               Data="{x:Static suki:Icons.RefreshCircle}"
                                               Foreground="{DynamicResource SukiLowText}" />
@@ -378,8 +378,8 @@
                                                        Opacity="{TemplateBinding Text, Converter={StaticResource StringToDoubleC}}"
                                                        Text="{TemplateBinding Text, Mode=TwoWay}"
                                                        ToolTip.Tip="{DynamicResource STRING_BUTTON_CLEAR}">
-                                    <PathIcon Width="16"
-                                              Height="16"
+                                    <PathIcon Width="18"
+                                              Height="18"
                                               Margin="0"
                                               Data="{x:Static suki:Icons.CircleClose}"
                                               Foreground="{DynamicResource SukiLowText}" />
