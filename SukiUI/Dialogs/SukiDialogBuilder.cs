@@ -31,6 +31,7 @@ namespace SukiUI.Dialogs
         public async Task<bool> TryShowAsync(CancellationToken cancellationToken = default)
         {
             var completion = Completion ?? new TaskCompletionSource<bool>();
+
             using var _ = cancellationToken.Register(() => completion.TrySetCanceled(cancellationToken));
             Dialog.OnDismissed += DialogCancellationRequested;
 
